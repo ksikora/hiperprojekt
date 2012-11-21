@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.6'
 gem 'therubyracer'
 gem 'bootstrap-sass', '2.0.2' # sass to jezyk podobny do LESS CSS, ktorego normalnie uzywa bootstrap
 gem 'bcrypt-ruby', '3.0.1'# dzieki temu bedziemy szyfrowali hasla w bazie danych
