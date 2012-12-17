@@ -1,0 +1,18 @@
+<h1>Listing monitoring_apps</h1>
+
+<table>
+  <tr>
+    <th>name</th>
+  </tr>
+
+<% $monitoring_apps.each do |monitoring_app| %>
+  <tr>
+  	<td><%= monitoring_app["name"]%>
+    <td><%= link_to 'Show monitors hosts list',{ :controller => "monitoring_apps", :action => "showhosts", :hosts_list => CGI::escape(monitoring_app["hosts_list"]).gsub('.','XXX')} %></td>
+    <td><%= link_to 'Show monitors feeds list',{ :controller => "monitoring_apps", :action => "showfeeds", :feeds_list => CGI::escape(monitoring_app["feeds_list"]).gsub('.','XXX')} %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

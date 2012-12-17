@@ -1,9 +1,9 @@
 <% provide(:title, 'Home') %> <!-- przypisuje zmiennej title "Home"  znaczniki bez rowna sie tylko execute code -->
 <div class="center hero-unit"> <!-- # ta klasa(hero-unit) odpowiada za obszar o delikatnie niebieskim tle. importujemy 2 klasy -->
-		<h1>Sample App</h1>
-		<h2>this is the homepage</h2>
+		<h1>Welcome to hiperprojekt</h1>
+		<h2>sign in or sign up to show the content</h2>
 
-		<%= link_to "Sign up now!", signup_path, :class => "btn btn-large btn-primary" %> <!-- klasy btn to buttony, kolejne klasy działają jak dektoratory, kazda klasa dorzuca coś od siebie, niektore klasy są dodawane po to by do nich podpiąc jakiegos cssa co jest mega wygodne 
+		<%= link_to "Sign up", signup_path, :class => "btn btn-large btn-primary" %> <!-- klasy btn to buttony, kolejne klasy działają jak dektoratory, kazda klasa dorzuca coś od siebie, niektore klasy są dodawane po to by do nich podpiąc jakiegos cssa co jest mega wygodne 
 
 btn-success - zielony
 btn-primary - niebieski

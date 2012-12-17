@@ -1,0 +1,19 @@
+<h1>Listing hosts</h1>
+
+<table>
+  <tr>
+    <th>name</th>
+    <th>monitor name</th>
+  </tr>
+
+<% $hosts.each do |host| %>
+  <tr>
+		<td><%= host["name"]%></td>
+		<td><%= host["monitor_name"]%></td>
+    <td><%= link_to 'Show feeds',{ :controller => "hosts", :action => "show", :feedslist => CGI::escape(host["feeds_list"]).gsub('.','XXX') } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

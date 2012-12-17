@@ -1,9 +1,20 @@
 SimpleApp::Application.routes.draw do
 
+
+  resources :monitoring_apps
+
+  resources :feeds
+	match '/hosts/show/:feedslist', :controller => :hosts, :action => :show
+	match '/hosts/showfeed/:monitor_feed_uri', :controller => :hosts, :action => :showfeed
+	match '/monitoring_apps/showhosts/:hosts_list', :controller => :monitoring_apps, :action => :showhosts
+	match '/monitoring_apps/showfeeds/:feeds_list', :controller => :monitoring_apps, :action => :showfeeds
+  resources :hosts
+	match ':controller/:action/:feedslist'
+#	match ':controller/:action/:monitor_feed_uri'
   resources :computers
 
 
-	resources :users #mowi ze pod adresem /users są jakies zasoby RESTowe(do ktorych sie mozna odwolac po /id np users/1 oraz wiele innych(po prostu calego resta. np users/1/edit albo /users/new
+	resources :users #mowi ze pod adresem /us:monitor_feed_uriers są jakies zasoby RESTowe(do ktorych sie mozna odwolac po /id np users/1 oraz wiele innych(po prostu calego resta. np users/1/edit albo /users/new
 
 	resources :sessions, only: [:new, :create, :destroy] # tylko wymienione restowe operacje sa dozwolone new -> wyswietlanie strony signin(GET), create -> zatwierdzanie formularza na stronie signin -> (POST), natomiast destroy jest generowane poprzez nacisniecie signout 
 

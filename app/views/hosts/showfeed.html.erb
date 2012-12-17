@@ -1,0 +1,23 @@
+<h1>Listing samples for feed</h1>
+
+<table>
+  <tr>
+    <th>host</th>
+    <th>paramName</th>
+    <th>paramValue</th>
+    <th>time</th>
+  </tr>
+  
+<% $feeds.each do |feed| %>
+  <tr>
+		<td><%= feed["host"]%></td>
+		<td><%= feed["paramName"]%></td>
+		<td><%= feed["paramValue"]%></td>
+		<td><%= feed["time"]%></td>
+  </tr>
+<% end %>
+</table>
+
+<br />  
+  
+</table>

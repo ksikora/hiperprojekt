@@ -11,11 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121121172920) do
+ActiveRecord::Schema.define(:version => 20121216021124) do
 
   create_table "computers", :force => true do |t|
     t.string   "host"
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "feeds", :force => true do |t|
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "name"
+    t.string   "monitor_name"
+    t.string   "host_name"
+    t.string   "monitor_feed_uri"
+  end
+
+  create_table "hosts", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.string   "host"
+    t.string   "uri"
+  end
+
+  create_table "monitoring_apps", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -64,5 +64,15 @@ module SimpleApp
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+		KatalogIp = "http://hiperkatalog.vipserv.org"
+
+		def encrypt(message, key)
+			command = 'echo -n "'+message+'" | openssl enc -nosalt -a -e -des3 -pass pass:"'+key+'"'
+			puts command
+			out = %x[ #{command} ]
+			return out[0..-2]
+		end
+
   end
 end
